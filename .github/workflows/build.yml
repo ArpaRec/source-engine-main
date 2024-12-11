@@ -13,9 +13,6 @@ jobs:
     # Step 2: Install dependencies (if required)
     - name: Install dependencies
       run: |
-        # Install necessary tools or dependencies here
-        choco install -y python3  # Example: Install Python if your waf script requires it
-        python --version
         pip install --upgrade pip
 
     # Step 3: Build the project
@@ -25,10 +22,17 @@ jobs:
         ./waf.bat configure -T debug -8
         ./waf.bat build
 
+
+    - name: Debug Extensions
+      run: |
+        listt.bat build
+
     # Step 4: Upload build artifacts
     - name: Upload Executables
       uses: actions/upload-artifact@v3
       with:
         name: executables
         path: |
-          out/*    # Replace 'build/*' with the actual path to your executables
+          build/**/*.exe
+          build/**/*.bat
+          build/**/*.dll
