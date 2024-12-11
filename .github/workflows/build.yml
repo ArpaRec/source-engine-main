@@ -25,7 +25,7 @@ jobs:
 
     - name: Debug Extensions
       run: |
-        listt.bat build
+        ./listt.bat build
 
     # Step 4: Upload build artifacts
     - name: Upload Executables
