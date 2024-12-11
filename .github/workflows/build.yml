@@ -36,3 +36,7 @@ jobs:
           build/**/*.exe
           build/**/*.bat
           build/**/*.dll
+          build/**/*.res
+          build/**/*.json
+          build/**/*.lib
+          build/**/*.manifest
